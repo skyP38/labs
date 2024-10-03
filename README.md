@@ -12,3 +12,22 @@ lab1:
 1. Работает с нуль-терминированной строкой (const char*).
 2. Работает с массивом символов и их количеством (const char* + size_t).
 3. Работает с экземпляром класса std::string.
+
+
+Сборка через CMake, по умолчанию собирается цель l1, можно создать новую цель для сборки тестов
+Сборка вручную(диалоговая программа): 
+g++ input.h input.cpp func.h func.cpp main.cpp -o l1
+make l1
+Сборка вручную(запуск тестов): 
+g++ input.h input.cpp func.h func.cpp tests.cpp -o tests
+make tests
+
+Примеры использования:
+в режиме 1(json to struct):
+на вхоже {"count":3245, "name":"fgh", "id": "ioejjjj"}
+на выходе структура Detail {id:"ioejjjj", name:"fgh", id:3245}
+в режиме 0(struct to json):
+на выходе структура Detail {id:"ioejjjj", name:"fgh", id:3245} (запрашивается ввода каждого поля)
+на выходе {"id": "ioejjjj", "name":"fgh", "count":3245 }
+
+
