@@ -8,5 +8,5 @@ add_library(func 1/func.h 1/func.cpp)
 
 link_libraries(input func)
 
-add_executable(l1 main.cpp)
+add_executable(l1 1/main.cpp)
 #add_executable(l1 tests.cpp)
