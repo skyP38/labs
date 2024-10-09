@@ -14,22 +14,17 @@ int main() {
       }
       std::cin.ignore(std::numeric_limits<std::streamsize>::max(), '\n');
       if (mode == 0) {
-          Detail detail{};
-          input::input_struct(detail);
+          Detail detail = input::input_struct();
           std::cout << handler::str2json(detail) << std::endl;
       } else if (mode == 1) {
-          std::string json;
-          input::input_json(json);
+          std::string json = input::input_json();
           Detail detail = handler::json2str(json);
           std::cout << std::format("id: {}, name: {}, count: {}", detail.id, detail.name, detail.count) << std::endl;
       } else
           throw std::runtime_error("Wrong mode");
   }
 
-  catch(const std::runtime_error& e) {
-      std::cerr << e.what() << std::endl;
-  }
-  catch(const std::logic_error& e) {
+  catch(const std::exception& e) {
       std::cerr << e.what() << std::endl;
   }
 }
