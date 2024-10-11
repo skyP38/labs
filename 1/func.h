@@ -6,6 +6,8 @@
 #ifndef L1_FUNC_H
 #define L1_FUNC_H
 
+#include <string>
+
 struct Detail{
     std::string id;
     std::string name;

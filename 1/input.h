@@ -5,11 +5,11 @@
 #ifndef L1_INPUT_H
 #define L1_INPUT_H
 
-struct Detail;
+#include "func.h"
 
 namespace input {
     void process_error(std::istream& in);
-    void input_struct(Detail &);
-    void input_json(std::string&);
+    Detail input_struct();
+    std::string input_json();
 }
 #endif //L1_INPUT_H
